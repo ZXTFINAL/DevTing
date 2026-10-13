@@ -23,7 +23,7 @@
 需要 Python 3.12 或更新版本。首次运行会安装 Deep Agents 及服务依赖。
 
 ```sh
-git clone <repository-url>
+git clone https://github.com/ZXTFINAL/DevTing.git
 cd DevTing
 python3.12 -m venv .venv
 source .venv/bin/activate
