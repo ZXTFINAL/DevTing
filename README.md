@@ -1,28 +1,56 @@
-# 织点 DevTing
+# DevTing — From product intent to a roadmap teams can follow
 
-> **开发阶段 / 本地 MVP**：用于验证 AI 参与需求澄清、人工裁决、任务交付和项目记忆的研发协作流程。功能与质量仍在迭代，不是生产级或多人协作服务。
+<p align="center">
+  <a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a>
+</p>
 
-织点希望把研发中“先把方向说清楚，再开始做”的工作变成产品流程：PDT 经理协助澄清问题、价值假设、证据和 Kano 候选；用户决定哪些需求进入范围；PM 再把已确认需求拆成开发、设计和测试任务。项目决策、角色消息、会议纪要和文档版本保存在项目空间里，减少关键信息只留在长会话中的风险。
+<p align="center">
+  <img src="assets/devting-overview.svg" alt="DevTing turns a product idea into human-approved requirements, coordinated work, and traceable delivery." width="100%" />
+</p>
 
-## 当前能做什么
+<p align="center">
+  <img alt="Development status" src="https://img.shields.io/badge/status-development-8b7cf6?style=flat-square" />
+  <img alt="Python 3.12 and newer" src="https://img.shields.io/badge/python-3.12%2B-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img alt="AI orchestration with Deep Agents" src="https://img.shields.io/badge/AI-Deep%20Agents-6558e8?style=flat-square" />
+  <img alt="Local-first MVP" src="https://img.shields.io/badge/deployment-local%20MVP-27a785?style=flat-square" />
+</p>
 
-- **创建并隔离项目**：记录项目目标、产品形态和开发模式；新项目从空白需求开始，并准备交付物文档骨架和新手引导。
-- **需求分析与人工裁决**：提交想法后由 PDT/产品角色协助分析；Kano 结果是带依据和证据缺口的建议。用户可确认、拒绝、修改后再议或挂起；只有确认的需求会进入正式基线。
-- **PM 拆解与任务跟踪**：批准需求进入持久化拆解队列，生成关联的角色任务和验收标准；看板记录负责人、进度、评审、阻塞及完成结果。
-- **树形 Roadmap 与并行控制**：首页按 PDT 阶段展开需求、任务和交付物；节点详情展示状态、验收信息与实时项目事件。任务可设串行/并行，项目并行上限由服务端校验。
-- **角色协作与项目群**：PDT、PM、系统工程师、产品、UI、前后端、数据、算法、测试、部署运维共 11 类角色，可配置人数、提示词、汇报关系，以及平台 Deep Agents / Codex CLI / Claude Code Runtime；角色回复和 PDT 委派报告同步到角色会话与项目群。
-- **项目文档和记忆**：维护产品需求包、PRD、概要/详细设计、测试/自测、运维等交付物；保存文档版本、项目事实、假设、来源和关联对象。
-- **Markdown 阅读体验**：聊天、摘要、需求列表/分析、Roadmap 节点、文档预览、记忆、决策、会议纪要和追溯等项目文本共用安全 Markdown 渲染，支持标题、嵌套列表、表格、代码块、行内格式、链接和图片；结构化消息内容会先转换为可读文本，原始 HTML 不执行。
-- **会议与决策**：手动或按用户开启的节奏召开项目会议；展示角色汇报和 PM 纪要。AI 行动建议需用户确认后才创建任务。决策建议需用户写明理由后审阅。
-- **导出与留痕**：导出需求 CSV、Markdown 交付摘要和包含状态、消息、事件及文档版本的 JSON 项目包。非默认项目可通过输入全名确认删除。
+> **Development-stage local MVP.** DevTing explores a more deliberate way to build software: make intent clear, keep people in control of decisions, and preserve the reasoning and progress that usually disappear inside long conversations. It is still evolving and is not production-ready or a multi-user service.
 
-待用户裁决的需求和项目决策会主动提示；AI 只能打开裁决详情，不能替用户批准。路线图实时展示 Agent 工作步骤和持久化项目事件，不等同于模型 token 级输出或多实例任务调度。
+## Why DevTing
 
-## 快速开始
+The slowest part of software work is often deciding what to build, why it matters, and what “done” means. DevTing brings that work into the development loop. AI helps clarify the problem and prepare recommendations; **you approve the scope**; the project team then turns approved requirements into connected design, implementation, and test work.
 
-需要 Python 3.12 或更新版本。首次运行会安装 Deep Agents 及服务依赖。
+The roadmap, role conversations, decisions, meeting notes, and document versions stay in the local project space, so delivery can continue without relying on one ever-growing chat history.
 
-```sh
+## What you can do
+
+- **Start a project with context** — capture the goal, product shape, initial problem, and waterfall, agile, or hybrid delivery mode. New projects begin with a guided setup and a clean requirements baseline.
+- **Analyze requirements with a human decision gate** — PDT and product roles surface value hypotheses, evidence gaps, and Kano category suggestions. Approve, revise, reject, or defer each proposal; only approved requirements enter the baseline.
+- **Turn approved scope into coordinated work** — PM creates linked role tasks and acceptance criteria. Track UI, engineering, and test work from requirement through review and completion.
+- **Explore a live, tree-shaped roadmap** — expand delivery stages into requirements, tasks, and deliverables. Inspect node status and project events, and set serial or parallel execution with a server-enforced project concurrency limit.
+- **Work with a configurable AI team** — use 11 role types across PDT, PM, systems, product, UI, frontend, backend, data, algorithms, testing, and operations. Configure role count, prompt, and reporting relationships.
+- **Choose a runtime per role** — route work through the platform’s Deep Agents runtime, Codex CLI, or Claude Code CLI. External CLIs run on the service machine against a configured local repository; they do not receive the platform’s model key.
+- **Keep project memory and deliverables together** — maintain the product requirements package, PRD, high- and low-level design, test and self-test plans, operations notes, decisions, and versioned project documents.
+- **Review meetings and decisions before they change the plan** — run meetings manually or enable a local schedule. AI action proposals require your confirmation before tasks are created.
+- **Read and export the project clearly** — Markdown is rendered across chat and project views. Export requirements as CSV, a delivery summary as Markdown, or the project history and document versions as JSON.
+
+Kano labels are recommendations with rationale and evidence gaps, not validated market research. The roadmap shows agent steps and persisted project events; it is not token-level streaming or a distributed multi-agent scheduler.
+
+## A project flow with human approval at the center
+
+1. **Create a project** and describe the problem, audience, product shape, and delivery mode.
+2. **Clarify with the PDT manager.** Separate evidence from assumptions and identify unanswered questions.
+3. **Review requirement proposals.** Check the suggested Kano category, reasoning, confidence, and missing evidence. An attractive requirement may delight users when present without causing equal dissatisfaction when absent.
+4. **Make the scope decision.** Approve, revise, reject, or defer. Approval establishes the baseline and queues PM decomposition; the other outcomes do not create delivery work.
+5. **Follow work on the roadmap.** Expand a stage to see its requirements, role tasks, dependencies, deliverables, and event history. Adjust concurrency and serial/parallel execution.
+6. **Review work and artifacts.** Track acceptance criteria, tests, design documents, decisions, and meeting actions. AI recommendations remain reviewable until you accept them.
+
+## Quick start
+
+Requires Python 3.12 or newer. First install the dependencies and create a local environment:
+
+```bash
 git clone https://github.com/ZXTFINAL/DevTing.git
 cd DevTing
 python3.12 -m venv .venv
@@ -31,93 +59,72 @@ python -m pip install -r requirements.txt
 cp .env.example .env
 ```
 
-编辑 `.env`，在 `DEEPSEEK_API_KEY` 中填入你自己的 DeepSeek API Key，然后启动：
+Add your own DeepSeek API key to `DEEPSEEK_API_KEY` in `.env`, then run the app:
 
-```sh
+```bash
 uvicorn backend.app:app --host 127.0.0.1 --port 8765
 ```
 
-打开 <http://127.0.0.1:8765/>。首次启动没有可恢复的数据时，界面会提示创建项目；创建后可从 PDT 对话开始需求澄清。
+Open <http://127.0.0.1:8765/> and create a project. Without a model key, you can still inspect and edit local project data and documents, but AI chat, requirement analysis, automatic PM decomposition, and meetings are unavailable. Keep provider keys in the server-side `.env`; never commit them or paste them into browser code.
 
-如果暂时不配置模型密钥，项目状态和文档工作区仍可本地查看与编辑，但 AI 对话、需求分析、自动 PM 拆解和会议不会运行。模型 Key 只保存在服务端 `.env`，不要粘贴到聊天、浏览器代码或提交到仓库。
+### Connect a coding runtime to a role
 
-### 可选：为单个角色连接本机编码 Runtime
+In **Team**, open a role’s settings and choose Platform Runtime, Codex CLI, or Claude Code. For a CLI, set the absolute path to a local code repository. The CLI must be installed and authenticated on the machine running DevTing. The “command available” indicator only detects the executable; login is checked when the runtime is called.
 
-打开“团队”页查看三种 Runtime 状态，点击某个角色右侧的设置按钮，选择平台 Runtime、Codex CLI 或 Claude Code；使用子 Runtime 时填写本机代码仓库绝对路径。运行 DevTing 服务的这台机器需要安装并登录相应 CLI；界面中的“命令可用”仅表示检测到了可执行文件，实际登录状态会在调用时验证。平台使用受限权限模式启动外部 CLI，不会把 DevTing 的 DeepSeek 密钥传给它。
+An external runtime can inspect or edit its configured code repository, but currently has no direct DevTing database tools. Its report is synced to the role conversation and project group; the platform role is responsible for persisting any structured project updates. The platform runtime retains the project requirement, task, and document tools.
 
-外部 Runtime 可以在指定仓库内检查或编辑代码，但目前没有 DevTing 数据库工具；它不能声称已直接更新项目需求、任务、决策或交付文档。报告会同步到角色会话和项目群，再由平台角色将需要持久化的结构化项目记录写入项目空间。平台 Runtime 保留原有需求、任务和文档工具。
+## Configuration
 
-## 从想法到交付
+| Variable | Purpose |
+| --- | --- |
+| `DEEPSEEK_API_KEY` | DeepSeek API key. Required for real model calls. |
+| `DEEPSEEK_BASE_URL` | OpenAI-compatible API endpoint; defaults to `https://api.deepseek.com`. |
+| `DEEPAGENTS_MODEL` | Deep Agents model identifier; defaults to `openai:deepseek-flash`. |
+| `DEVTING_DB_PATH` | Optional SQLite path override; defaults to `.data/zhidian.sqlite3`. |
 
-1. **创建项目**：填写项目名称、初始问题、产品形态和瀑布/敏捷/混合开发模式。
-2. **和 PDT 澄清**：从用户问题、目标人群、发生场景、价值假设与现有证据开始；没有依据的信息保留为假设或待确认事项。
-3. **审阅需求建议**：检查 Kano 候选类型、理由、置信度和证据缺口。魅力型需求指具备时可能带来明显惊喜、缺失时通常不会造成同等不满；标签不是市场研究结论。
-4. **做出裁决**：确认后形成正式需求基线并触发 PM 拆解；拒绝、修改或等待证据都不会创建研发任务。
-5. **在 Roadmap 控制节奏**：在首页展开需求与任务，查看 PDT 阶段、角色入场门槛和事件进度；设置项目最大并行数，并为有依赖的任务选择串行或并行。
-6. **跟踪交付物**：按需求查看 UI、开发、测试等任务，检查验收标准和状态；角色更新应留下来源清晰的群消息与文档记录。
-7. **复核会议、决策和记忆**：AI 产出的内容仍需人工审阅；需要带走时导出项目包。
+By default, the server listens only on `127.0.0.1`. Do not expose it publicly without authentication, access controls, backups, and a data-retention policy. Scheduled meetings are off by default and only run while the local service is running.
 
-## 配置
-
-`.env.example` 提供以下变量：
-
-| 变量 | 用途 |
-|---|---|
-| `DEEPSEEK_API_KEY` | DeepSeek API Key；必填才能调用真实模型 |
-| `DEEPSEEK_BASE_URL` | OpenAI 兼容接口地址，默认 `https://api.deepseek.com` |
-| `DEEPAGENTS_MODEL` | Deep Agents 使用的模型名，默认 `openai:deepseek-flash` |
-| `DEVTING_DB_PATH` | 可选；覆盖默认数据库路径 `.data/zhidian.sqlite3` |
-
-默认服务仅监听 `127.0.0.1`。不要在没有认证、访问控制、备份和数据保留策略时将服务直接暴露到公网。自动会议默认关闭；启用后由本地服务进程按设置的间隔调度，服务停止期间不会运行会议。
-
-## 技术结构
+## Architecture
 
 ```text
-浏览器：原生 HTML / CSS / JavaScript
-                 │ HTTP / JSON
-服务端：FastAPI ─┼─ Deep Agents + OpenAI 兼容模型
-                 └─ SQLite（项目状态、审计事件、文档版本）
+Browser (HTML / CSS / JavaScript)
+              │ HTTP / JSON
+FastAPI ──────┼── Deep Agents + OpenAI-compatible model
+              └── SQLite (project state, audit events, document versions)
 ```
 
-- [backend/app.py](backend/app.py)：API、项目状态、SQLite 持久化、Deep Agents 和调度逻辑。
-- [app.js](app.js)、[styles.css](styles.css)、[index.html](index.html)：单页工作台与交互。
-- [docs/](docs/)：产品愿景、需求包、PRD、概要/详细设计、测试、运维和决策台账。
+- `backend/app.py` — API, project state, SQLite persistence, Deep Agents orchestration, and scheduling.
+- `app.js`, `styles.css`, `index.html` — single-page workspace and interactions.
+- `docs/` — product vision, requirements, PRD, software design, test plans, operations, and decision records.
 
-## 本地闭环验收
+## Run the isolated integration checks
 
-在已安装开发依赖的环境中运行隔离集成烟测：
-
-```sh
+```bash
 python -m pip install -r requirements-dev.txt
 python -m unittest discover -s tests -v
 ```
 
-测试使用临时 SQLite 数据库和确定性角色替身，不调用真实模型，也不会读写 `.data/zhidian.sqlite3`。它覆盖项目创建、PDT 候选需求、人工批准门禁、PM 任务拆解、任务评审/验收、会议行动项确认、项目记忆审阅、文档版本、项目导出、项目隔离，以及逐角色 Runtime 配置和通过假 CLI 验证的子进程路由、消息同步、权限参数与密钥隔离。测试通过不代表真实 Deep Agents 输出质量、浏览器全流程或供应商 CLI 的登录/输出兼容性已验收；详见[闭环测试记录](docs/test-report-2026-10-13-closed-loop.md)。
+The checks use a temporary SQLite database and deterministic role doubles. They do not call a live model or read/write `.data/zhidian.sqlite3`. Coverage includes project creation, requirement approval gates, PM decomposition, task review and acceptance, meeting actions, memory review, document versions, exports, project isolation, and per-role runtime routing with a fake CLI. Passing tests does not verify real-model output quality, the full browser journey, or vendor CLI login/output compatibility. See the [closed-loop test report](docs/test-report-2026-10-13-closed-loop.md).
 
-## 开发现状与边界
+## Current limits
 
-这是一个持续开发的本地单用户 MVP。当前已实现主要需求裁决、PM 拆解、任务跟踪、角色会话、项目记忆、文档版本、决策审阅和会议流程；具体验收状态及未覆盖项以 [测试记录](docs/test-report-2026-10-09.md)、[测试大纲](docs/test-outline.md) 和各产品/设计文档为准。
+This is a local, single-user MVP. Important work remains around full browser-flow acceptance, usability across projects and devices, real-model quality and cost controls, meeting interruption recovery, data import, backup/restore drills, multi-user access control, and concurrent writes. Delivery modes currently share tracking and stage guidance but do not enforce every phase gate. The reporting hierarchy supports agent context and project records; it is not a full real-time team messenger.
 
-仍需完成和验证的工作包括：全流程浏览器验收、不同项目和设备上的易用性、真实模型输出质量与成本控制、自动会议定时触发和中断续跑队列、数据导入恢复、备份恢复演练，以及多用户认证授权和并发写入控制。服务重启时会把遗留进行中会议标为失败、保留已记录发言并重置下次调度时间，但不会续跑未完成角色。不同研发模式目前主要提供阶段说明和共同追踪数据，尚未形成覆盖所有阶段的强制门禁。角色汇报树用于 Agent 协作上下文和项目留痕，并非完整的多人即时消息系统。
+For more detail, see the [test report](docs/test-report-2026-10-09.md), [test outline](docs/test-outline.md), and the product and design documents below.
 
-项目数据和密钥属于本地使用者。`.env`、SQLite 数据、虚拟环境和运行缓存均由 [.gitignore](.gitignore) 排除；提交前仍应检查目标仓库内容和 GitHub 的密钥扫描结果。当前仓库尚未附带开源许可证，公开发布前需由项目所有者决定授权方式。
+## Product and design documents
 
-## 项目文档
+- [Product vision and founder notes](docs/product-vision.md)
+- [Product requirements package](docs/product-requirements-package.md)
+- [Product requirements document (PRD)](docs/PRD.md)
+- [Software high-level design](docs/software-high-level-design.md)
+- [Software detailed design](docs/software-detailed-design.md)
+- [Test outline](docs/test-outline.md) · [Self-test outline](docs/self-test-outline.md)
+- [Roadmap verification](docs/test-report-2026-10-13-roadmap.md)
+- [Markdown and role runtime verification](docs/test-report-2026-10-13-markdown-runtime.md)
+- [Closed-loop integration report](docs/test-report-2026-10-13-closed-loop.md)
+- [Operations outline](docs/operations-outline.md) · [Decisions and open questions](docs/decisions-and-open-questions.md)
 
-- [产品愿景与创始人构想](docs/product-vision.md)
-- [产品需求包](docs/product-requirements-package.md)
-- [产品需求文档 PRD](docs/PRD.md)
-- [软件概要设计](docs/software-high-level-design.md)
-- [软件详细设计](docs/software-detailed-design.md)
-- [测试大纲](docs/test-outline.md)
-- [自测大纲](docs/self-test-outline.md)
-- [2026-10-13 Roadmap 核验记录](docs/test-report-2026-10-13-roadmap.md)
-- [2026-10-13 Markdown 与角色 Runtime 浏览器核验](docs/test-report-2026-10-13-markdown-runtime.md)
-- [2026-10-13 闭环集成验收记录](docs/test-report-2026-10-13-closed-loop.md)
-- [隔离核验记录](docs/test-report-2026-10-09.md)
-- [部署与运维方案](docs/operations-outline.md)
-- [决策与待确认事项](docs/decisions-and-open-questions.md)
+## License
 
-## 许可证
-
-尚未指定。除非仓库所有者添加许可证，默认版权仍归权利人所有，使用者不应假设可以复制、修改或再分发。
+No license has been selected yet. Until one is added, do not assume the code can be reused, modified, or redistributed.
